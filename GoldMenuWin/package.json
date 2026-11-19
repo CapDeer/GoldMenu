@@ -1,0 +1,42 @@
+{
+  "name": "gold-menu-win",
+  "version": "1.0.0",
+  "description": "Windows 系统托盘金价小组件",
+  "main": "main.js",
+  "author": "GoldMenu",
+  "build": {
+    "appId": "com.goldmenu.win",
+    "productName": "GoldMenu",
+    "electronDownload": {
+      "mirror": "https://npmmirror.com/mirrors/electron/"
+    },
+    "win": {
+      "icon": "icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        },
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "files": ["main.js", "index.html", "renderer.js", "gold-service.js", "tray-icon.png", "icon.ico", "package.json"]
+  },
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "28.3.3",
+    "electron-builder": "24.13.3"
+  }
+}

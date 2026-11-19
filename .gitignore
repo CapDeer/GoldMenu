@@ -1,0 +1,7 @@
+cat >> .gitignore <<'EOF'
+/GoldMenuWin/dist/
+/GoldMenuWin/electron-mirror/
+/GoldMenuWin/node_modules/
+.DS_Store
+/.idea/
+EOF
